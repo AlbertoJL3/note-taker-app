@@ -27,7 +27,7 @@ app.get('/api/notes', (req, res) => {
 });
 
 
-// POST request to add a review
+// POST request to add a Note
 app.post('/api/notes', (req, res) => {
   // Log that a POST request was received
   console.info(`${req.method} request received to add a review`);
@@ -44,7 +44,7 @@ app.post('/api/notes', (req, res) => {
       review_id: uuid(),
     };
 
-    // Obtain existing reviews
+    // Obtain existing Notes
     fs.readFile('./db/db.json', 'utf8', (err, data) => {
       if (err) {
         console.error(err);
@@ -52,10 +52,10 @@ app.post('/api/notes', (req, res) => {
         // Convert string into JSON object
         const parsedNotes = JSON.parse(data);
 
-        // Add a new review
+        // Add a new Note
         parsedNotes.push(newNote);
 
-        // Write updated reviews back to the file
+        // Write updated Notes back to the file
         fs.writeFile(
           './db/db.json',
           JSON.stringify(parsedNotes, null, 4),
@@ -75,7 +75,7 @@ app.post('/api/notes', (req, res) => {
     console.log(response);
     res.status(201).json(response);
   } else {
-    res.status(500).json('Error in posting review');
+    res.status(500).json('Error in posting note!');
   }
 });
 
