@@ -2,10 +2,14 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const app = express();
+const uuid = require('./helpers/uuid');
 
 
 app.use(express.static('public'))
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 app.get('/notes', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'notes.html'));
@@ -21,11 +25,9 @@ app.get('/api/notes', (req, res) => {
   });
 });
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
+
 
 
 app.listen(3001, () => {
-  console.log('Server listening on port http://localhost/3001');
+  console.log('Server listening on port http://localhost:3001');
 });
