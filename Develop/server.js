@@ -40,7 +40,7 @@ app.post('/api/notes', (req, res) => {
     const newNote= {
       title,
       text,
-      review_id: uuid(),
+      note_id: uuid(),
     };
 
     // Obtain existing Notes
@@ -79,7 +79,7 @@ app.post('/api/notes', (req, res) => {
 });
 
 // DELETE request to delete a Note
-app.delete('/api/notes/:review_id', (req, res) => {
+app.delete('/api/notes/:note_id', (req, res) => {
   // Log that a DELETE request was received
   console.info(`${req.method} request received to delete a Note`);
 
@@ -92,7 +92,7 @@ app.delete('/api/notes/:review_id', (req, res) => {
       const parsedNotes = JSON.parse(data);
 
       // Delete the specified Note
-      const updatedNotes = parsedNotes.filter((note) => note.review_id !== req.params.review_id);
+      const updatedNotes = parsedNotes.filter((note) => note.note_id !== req.params.note_id);
 
       // Write updated Notes back to the file
       fs.writeFile(
