@@ -5,7 +5,6 @@ const app = express();
 const uuid = require('./helpers/uuid');
 
 
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'))
@@ -79,9 +78,42 @@ app.post('/api/notes', (req, res) => {
   }
 });
 
+// DELETE request to delete a Note
+app.delete('/api/notes/:review_id', (req, res) => {
+  // Log that a DELETE request was received
+  console.info(`${req.method} request received to delete a Note`);
+
+  // Obtain existing Notes
+  fs.readFile('./db/db.json', 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+    } else {
+      // Convert string into JSON object
+      const parsedNotes = JSON.parse(data);
+
+      // Delete the specified Note
+      const updatedNotes = parsedNotes.filter((note) => note.review_id !== req.params.review_id);
+
+      // Write updated Notes back to the file
+      fs.writeFile(
+        './db/db.json',
+        JSON.stringify(updatedNotes, null, 4),
+        (writeErr) =>
+          writeErr
+            ? console.error(writeErr)
+            : console.info('Successfully deleted Note!')
+      );
+
+      res.status(200).json('Successfully deleted Note');
+    }
+  });
+});
+
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
+
+
 
 app.listen(3001, () => {
   console.log('Server listening on port http://localhost:3001');

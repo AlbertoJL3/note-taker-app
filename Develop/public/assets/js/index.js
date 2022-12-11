@@ -54,7 +54,7 @@ const deleteNote = (id) =>
 const renderActiveNote = () => {
   hide(saveNoteBtn);
 
-  if (activeNote.id) {
+  if (activeNote.review_id) {
     noteTitle.setAttribute('readonly', true);
     noteText.setAttribute('readonly', true);
     noteTitle.value = activeNote.title;
@@ -62,8 +62,8 @@ const renderActiveNote = () => {
   } else {
     noteTitle.removeAttribute('readonly');
     noteText.removeAttribute('readonly');
-    noteTitle.value = '';
-    noteText.value = '';
+    noteTitle.value = 'fail';
+    noteText.value = 'fail';
   }
 };
 
@@ -84,9 +84,9 @@ const handleNoteDelete = (e) => {
   e.stopPropagation();
 
   const note = e.target;
-  const noteId = JSON.parse(note.parentElement.getAttribute('data-note')).id;
+  const noteId = JSON.parse(note.parentElement.getAttribute('data-note')).review_id;
 
-  if (activeNote.id === noteId) {
+  if (activeNote.review_id === noteId) {
     activeNote = {};
   }
 
@@ -175,7 +175,6 @@ const renderNoteList = async (notes) => {
 const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
 if (window.location.pathname === '/notes') {
-  
   saveNoteBtn.addEventListener('click', handleNoteSave);
   newNoteBtn.addEventListener('click', handleNewNoteView);
   noteTitle.addEventListener('keyup', handleRenderSaveBtn);
