@@ -22,6 +22,11 @@ The application’s front end has already been created. It's your job to build t
 
 You can clone down the repo and run it locally by opening the directory and doing "npm start" and you'll be able to find it in [Local Host](http://localhost:3001)!
 
+You can also find it in the [Note Taker Site!](https://note-taking-app-ajl.herokuapp.com/)
+
+## Screenshot
+
+![Note Taker App](./public/assets/images/img2.jpg)
 
 ## References
 3. [Full-Stack Blog on how to use API keys](https://coding-boot-camp.github.io/full-stack/apis/how-to-use-api-keys).
