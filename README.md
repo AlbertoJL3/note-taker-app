@@ -26,8 +26,9 @@ The application’s front end has already been created. It's your job to build t
 ![Note Taker App](./public/assets/images/img2.jpg)
 
 ## References
-3. [Full-Stack Blog on how to use API keys](https://coding-boot-camp.github.io/full-stack/apis/how-to-use-api-keys).
-4. [Moment-js](https://momentjs.com/) 
+1. [Deploying on Heroku](https://devcenter.heroku.com/articles/git).
+2. [Buildpacks](https://devcenter.heroku.com/articles/buildpacks) 
+3. [Routes in Express.js](https://expressjs.com/en/guide/routing.html)
 
 
 ## License
