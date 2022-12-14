@@ -4,6 +4,7 @@ const fs = require('fs');
 const app = express();
 const uuid = require('./helpers/uuid');
 
+const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -115,6 +116,6 @@ app.get('*', (req, res) => {
 
 
 
-app.listen(3001, () => {
-  console.log('Server listening on port http://localhost:3001');
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
