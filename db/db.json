@@ -1,0 +1,17 @@
+[
+    {
+        "title": "The A-Team",
+        "text": "I LOVE IT WHEN A PROJECT COMES TOGETHER!",
+        "note_id": "a80c"
+    },
+    {
+        "title": "Bob's Burgers ",
+        "text": "Great show, terrible restaurant!",
+        "note_id": "9988"
+    },
+    {
+        "title": "How has this worked? ",
+        "text": "It was a long quest to reach this point of success. Some say it started with excellence but I was cursed with everything but. Broken and beaten I pushed my code to my heroku and somehow it emerged from the ashes a beautiful beast! ",
+        "note_id": "38fc"
+    }
+]
