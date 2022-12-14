@@ -10,19 +10,16 @@ The goal of this project is to make a note-taking app that can allow the user to
 * [License](#license)
 
 ## Description
-This project's objective is to modify starter code to create an application called Note Taker that can be used to write and save notes. This application will use an Express.js back end and will save and retrieve note data from a JSON file.
+This project's objective is to modify starter code to create an application called Note Taker that can be used to write and save notes. This application will use an Express.js back end and will save and retrieve note data from a JSON file. It will also allow the user to delete notes. 
 
 The application’s front end has already been created. It's your job to build the back end, connect the two, and then deploy the entire application to Heroku.
 
      
 ## Usage
 
-* Navigate to [Note-Taker-App](https://albertojl3.github.io/Note-Taker-App/) to view the web page 
-* [Note-Taker-App](https://github.com/AlbertoJL3/note-taker-app) in GitHub.
-
-You can clone down the repo and run it locally by opening the directory and doing "npm start" and you'll be able to find it in [Local Host](http://localhost:3001)!
-
-You can also find it in the [Note Taker Site!](https://note-taking-app-ajl.herokuapp.com/)
+* Navigate to the [Note Taker Site](https://note-taking-app-ajl.herokuapp.com/) to view the web page 
+* Checkout the [Note-Taker-App](https://github.com/AlbertoJL3/note-taker-app) repo in GitHub.
+* You can clone down the repo and run it locally by opening the directory and doing "npm start" and you'll be able to find it in your [Local Host URL](http://localhost:3001)!
 
 ## Screenshot
 
